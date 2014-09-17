@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Download sqlite3
+status "Downloading and installing node"
+sqlite3_url="http://www.sqlite.org/2014/sqlite-shell-linux-x86-3080600.zip"
+curl $sqlite3_url -s -o sqlite3.zip
+jar xf sqlite3.zip
