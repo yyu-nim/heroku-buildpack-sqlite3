@@ -21,6 +21,7 @@ sqlite3_url="http://www.sqlite.org/2014/sqlite-autoconf-3080600.tar.gz"
 curl $sqlite3_url -s -o - | tar xzf - -C $build_dir
 source_dir=$build_dir/sqlite-autoconf-3080600
 gcc $source_dir/shell.c $source_dir/sqlite3.c -lpthread -ldl
+ls $source_dir/
 mv $source_dir/a.out $build_dir/vendor/sqlite3/bin/sqlite3
 
 mkdir -p $build_dir/.profile.d
