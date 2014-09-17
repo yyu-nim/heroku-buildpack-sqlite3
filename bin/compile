@@ -18,5 +18,5 @@ status "Downloading and installing sqlite3"
 sqlite3_url="http://www.sqlite.org/2014/sqlite-shell-linux-x86-3080600.zip"
 curl $sqlite3_url -s -o sqlite3.zip
 mkdir -p $build_dir/vendor/sqlite3
-jar xf sqlite3.zip > $build_dir/vendor/sqlite3/bin/sqlite3
-PATH=$build_dir/vendor/sqlite3/bin:$PATH
+jar xf sqlite3.zip > $build_dir/vendor/sqlite3
+PATH=$build_dir/vendor:$PATH
