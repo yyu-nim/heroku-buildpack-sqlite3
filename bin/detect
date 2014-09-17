@@ -1,9 +1,3 @@
 #!/usr/bin/env bash
-
-#if [ -f $1/.buildpacks ]; then
-  echo "Multipack"
-  exit 0
-#else
-#  echo "no .buildpacks file"
-#  exit 1
-#fi
+echo "Sqlite3"
+exit 0
