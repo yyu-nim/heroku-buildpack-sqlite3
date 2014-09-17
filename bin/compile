@@ -19,8 +19,9 @@ source_dir=$build_dir/vendor/sqlite3/src
 
 # Download sqlite3
 status "Downloading and sqlite3"
-sqlite3_url="http://www.sqlite.org/2014/sqlite-autoconf-3080600.tar.gz"
-curl $sqlite3_url -s -o - | tar xzf - -C $build_dir/vendor/sqlite3/src
+sqlite3_url="http://www.sqlite.org/2014/sqlite-amalgamation-3080600.zip"
+curl $sqlite3_url -s -o $source_dir/sqlite3.zip
+jar xf $source_dir/sqlite3.zip
 
 cd $source_dir
 gcc $source_dir/shell.c $source_dir/sqlite3.c -lpthread -ldl
