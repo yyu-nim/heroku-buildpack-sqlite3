@@ -21,7 +21,7 @@ mkdir -p $build_dir/vendor/sqlite3/bin
 jar xf sqlite3.zip > $build_dir/vendor/sqlite3/bin/sqlite3
 #PATH=$build_dir/vendor/sqlite3/bin:$PATH
 
-mkdir -p $build/.profile.d
-echo 'PATH=$PATH:$HOME/vendor/sqlite3/bin' > $build/.profile.d/sqlite3.sh
+mkdir -p $build_dir/.profile.d
+echo 'PATH=$PATH:$HOME/vendor/sqlite3/bin' > $build_dir/.profile.d/sqlite3.sh
 echo $HOME
 echo $PATH
