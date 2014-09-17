@@ -19,9 +19,9 @@ mkdir -p $build_dir/vendor/sqlite3/bin
 status "Downloading and sqlite3"
 sqlite3_url="http://www.sqlite.org/2014/sqlite-autoconf-3080600.tar.gz"
 curl $sqlite3_url -s -o - | tar xzf - -C $build_dir
-ls $build_dir
-gcc $build_dir/shell.c $build_dir/sqlite3.c -lpthread -ldl
-mv $build_dir/a.out $build_dir/vendor/sqlite3/bin/sqlite3
+source_dir=$build_dir/sqlite-autoconf-3080600
+gcc $source_dir/shell.c $source_dir/sqlite3.c -lpthread -ldl
+mv $source_dir/a.out $build_dir/vendor/sqlite3/bin/sqlite3
 
 mkdir -p $build_dir/.profile.d
 echo 'PATH=$PATH:$HOME/vendor/sqlite3/bin' > $build_dir/.profile.d/sqlite3.sh
