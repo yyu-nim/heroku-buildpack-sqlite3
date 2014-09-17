@@ -13,15 +13,17 @@ bp_dir=$(cd $(dirname $0); cd ..; pwd)
 # Load some convenience functions like status(), echo(), and indent()
 source $bp_dir/bin/common.sh
 
+mkdir -p $build_dir/vendor/sqlite3/bin
+cd $build_dir/vendor/sqlite3/bin
+
 # Download sqlite3
 status "Downloading and installing sqlite3"
 sqlite3_url="http://www.sqlite.org/2014/sqlite-shell-linux-x86-3080600.zip"
-curl $sqlite3_url -s -o sqlite3.zip
-mkdir -p $build_dir/vendor/sqlite3/bin
-jar xf sqlite3.zip > $build_dir/vendor/sqlite3/bin/sqlite3
-#PATH=$build_dir/vendor/sqlite3/bin:$PATH
+curl $sqlite3_url -s -o $build_dir/vendor/sqlite3/bin/sqlite3.zip
+
+status "Unzipping sqlite3"
+jar xf $build_dir/vendor/sqlite3/bin/sqlite3.zip
+chmod +x $build_dir/vendor/sqlite3/bin/sqlite3
 
 mkdir -p $build_dir/.profile.d
 echo 'PATH=$PATH:$HOME/vendor/sqlite3/bin' > $build_dir/.profile.d/sqlite3.sh
-echo $HOME
-echo $PATH
