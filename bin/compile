@@ -23,7 +23,6 @@ source_dir=$build_dir/sqlite-autoconf-3080600
 cd $source_dir
 ./configure
 make
-make install
 #gcc $source_dir/shell.c $source_dir/sqlite3.c -lpthread -ldl
 ls $source_dir/
 mv $source_dir/sqlite $build_dir/vendor/sqlite3/bin/sqlite3
