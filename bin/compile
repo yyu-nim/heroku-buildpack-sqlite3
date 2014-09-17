@@ -19,7 +19,7 @@ mkdir -p $build_dir/vendor/sqlite3/src
 # Download sqlite3
 status "Downloading and sqlite3"
 sqlite3_url="http://www.sqlite.org/2014/sqlite-autoconf-3080600.tar.gz"
-curl $sqlite3_url -s -o | tar xzf - -C $build_dir/vendor/sqlite3/src
+curl $sqlite3_url -s -o - | tar xzf - -C $build_dir/vendor/sqlite3/src
 
 cd $build_dir/vendor/sqlite3/src
 gcc shell.c sqlite3.c -lpthread -ldl
