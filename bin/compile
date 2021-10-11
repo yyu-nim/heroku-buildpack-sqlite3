@@ -13,15 +13,4 @@ bp_dir=$(cd $(dirname $0); cd ..; pwd)
 # Load some convenience functions like status(), echo(), and indent()
 source $bp_dir/bin/common.sh
 
-mkdir -p $build_dir/vendor/sqlite3/bin
-
-# Download sqlite3
-status "Downloading and sqlite3"
-sqlite3_url="https://s3.amazonaws.com/sqlite3-heroku/sqlite3.tar.gz"
-curl $sqlite3_url -s -o - | tar xzf - -C $build_dir
-
-chmod +x $build_dir/sqlite3
-mv $build_dir/sqlite3 $build_dir/vendor/sqlite3/bin/sqlite3
-
-mkdir -p $build_dir/.profile.d
-echo 'PATH=$PATH:$HOME/vendor/sqlite3/bin' > $build_dir/.profile.d/sqlite3.sh
+apt-get install libsqlite3-dev
