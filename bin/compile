@@ -14,11 +14,11 @@ bp_dir=$(cd $(dirname $0); cd ..; pwd)
 source $bp_dir/bin/common.sh
 
 echo "apt-get update"
-sudo apt-get update
+apt-get update
 
 echo "apt-get upgrade"
-sudo apt-get upgrade
+apt-get upgrade
 
 #apt-get update && sudo apt-get upgrade
 echo "apt-get install"
-sudo apt-get install sqlite3 libsqlite3-dev
+apt-get install sqlite3 libsqlite3-dev
