@@ -13,6 +13,12 @@ bp_dir=$(cd $(dirname $0); cd ..; pwd)
 # Load some convenience functions like status(), echo(), and indent()
 source $bp_dir/bin/common.sh
 
-apt-get update && sudo apt-get upgrade
+echo "apt-get update"
+sudo apt-get update
 
-apt-get install sqlite3 libsqlite3-dev
+echo "apt-get upgrade"
+sudo apt-get upgrade
+
+#apt-get update && sudo apt-get upgrade
+echo "apt-get install"
+sudo apt-get install sqlite3 libsqlite3-dev
